@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donut Clicker</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <a href="https://orteil.dashnet.org/cookieclicker/" target="_blank">Inspiration For Game</a>
+      
+      <!-- Dropdown for About Me and About Company -->
+      <select id="aboutDropdown" onchange="navigateToPage()">
+          <option value="">Select...</option>
+          <option value="./aboutme.html">About Me</option>
+          <option value="./aboutcompany.html">About Company</option>
+      </select>
+  </header>
+
+    <div id="donutcounter">Donut Counter: 0</div>
+    <button id="clicker" onclick="addDonuts()">Clicker</button>
+    <button id="auto-clicker" onclick="addAutoClicker()">Buy Auto Clicker</button>
+    <div id="price">Auto Clicker: 0</div>
+    <div id="acCost">Auto Clicker Cost: 0</div>
+    <button id="reset" onclick="location.reload()">Reset Game</button>
+    <div class="container"></div>
+    <script src="./index.js"></script>
+    <script>
+      function navigateToPage() {
+          const dropdown = document.getElementById('aboutDropdown');
+          const selectedValue = dropdown.value;
+          if (selectedValue) {
+              window.location.href = selectedValue; // Navigate to the selected page
+          }
+      }
+  </script>
+  </body>
+</html>
